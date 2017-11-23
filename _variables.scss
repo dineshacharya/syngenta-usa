@@ -1,0 +1,111 @@
+/*
+ * @file
+ * Variables.
+ */
+
+
+/* Typography */
+$base-font-family: "Arial", sans-serif;
+
+$base-font-size: 10px;
+
+$h1-font-size: 4.8;
+$h2-font-size: 2.4;
+$h3-font-size: 2;
+$h4-font-size: 1.5;
+$h5-font-size: 1.4;
+$h6-font-size: 1.2;
+
+/* Colors */
+$body-bg: #f5f5f5;
+$link-color: #00a0be;
+$grey-bg: #e0e0e0;
+$soft-grey: #616161;
+$stone-grey: #212121;
+$select-grey: #ddd;
+$light-border-grey: #bfc1c7;
+$light-border-blue: #3898ec;
+$plant-green: #aab400;
+$light-plant-green: #9fae66;
+$lighter-plant-green: #bfc999;
+$dark-plant-green: #5f7800;
+$dark-green-hover: #96a657;
+$orange: #ecb32a;
+$dark-sun-orange: #eb8200;
+$pale-sun-orange: #ffb400;
+$white: #fff;
+$gray-border: #ccc;
+$gray-text: #7d7d7d;
+$light-gray-bg: #efefef;
+$warning-color: #ffc47d;
+$accordion-green: #f2f5e8;
+$row-even: #edefe1;
+
+/* Spaces */
+$indent: 20px;
+$indent-m: 15px;
+$indent-sm: 10px;
+
+/* Search button width */
+$search-button-big: 55px;
+$component-height-400: 400px;
+
+/* Susy Defaults */
+$susy: (
+  columns: 12,
+  container: 1140px,
+  gutters: 0,
+  gutter-position: inside,
+  global-box-sizing: border-box,
+);
+
+$susy-media: (
+  large: (
+    media: screen,
+    min-width: 1025px,
+  ),
+  medium: (
+    media: screen,
+    max-width: 1024px,
+  ),
+  medium-m: (
+    media: screen,
+    max-width: 991px,
+  ),
+  medium-s: (
+    media: screen,
+    min-width: 768px,
+  ),
+  small: (
+    media: screen,
+    max-width: 767px
+  ),
+  small-m: (
+    media: screen,
+    max-width: 480px
+  ),
+  /* iPhone 6 */
+  small-sm: (
+    media: screen,
+    max-width: 375px
+  ),
+  /* Galaxy S5 */
+  small-smm: (
+    media: screen,
+    max-width: 360px
+  ),
+  /* iPhone 5 */
+  small-s: (
+    media: screen,
+    max-width: 320px
+  ),
+);
+
+/* CSS3 */
+$box-shadow: rgba(0, 0, 0, 0.1) 0 0 6px 0;
+
+/* Components variables.  */
+$component-height: 388px;
+$service-component-small: 155px;
+$service-component-big: 328px;
+$service-component-title: 60px;

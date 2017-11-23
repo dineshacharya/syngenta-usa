@@ -1,0 +1,502 @@
+/**
+ * @file
+ * Forms.
+ * Global styles.
+ */
+
+// Forms
+//
+// Default styles for form elements.
+//
+// This section is located in sass/base/_forms.scss
+//
+// The default styles used for form elements
+//
+// Style guide: forms
+
+// Text fields
+//
+// Default styles for form text fields.
+//
+// Style guide: forms.textfields
+
+
+// Font Awesome
+//
+// This is need only for the icons to be displayed properly.
+//
+// Markup:
+// <style>
+//    @font-face {
+//      font-family: 'FontAwesome';
+//      src: url('fontawesome/fonts/fontawesome-webfont.eot?v=4.2.0');
+//      src: url('fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.2.0') format('embedded-opentype'), url('fontawesome/fonts/fontawesome-webfont.woff?v=4.2.0') format('woff'), url('fontawesome/fonts/fontawesome-webfont.ttf?v=4.2.0') format('truetype'), url('fontawesome/fonts/fontawesome-webfont.svg?v=4.2.0#fontawesomeregular') format('svg');
+//      font-weight: normal;
+//      font-style: normal;
+//    }
+// </style>
+//
+// Styleguide: forms.fontawesome
+
+
+// Input type text/password
+//
+// Markup:
+// <div class="clearfix">
+//  <div class="form-item form-type-textfield form-item-name">
+//    <label for="edit-name">Email <span class="form-required" title="This field is required.">*</span></label>
+//    <input tabindex="1" placeholder="Email" type="text" id="edit-name" name="name" value="" size="60" maxlength="60" class="form-text required">
+//  </div>
+// </div>
+//
+// Style guide: forms.textfields.input-text
+.form-type-textfield,
+.form-type-password {
+  max-width: 100%;
+
+  input {
+    @extend %form-inputs;
+    padding: $indent-m / 1.25;
+    width: 100%;
+  }
+}
+
+// Textarea
+//
+// Markup:
+//  <div class="form-item form-type-textarea form-item-field-ef-contact-us-message-und-0-value">
+//    <label for="edit-field-ef-contact-us-message-und-0-value">Message <span class="form-required" title="This field is required.">*</span></label>
+//    <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea"><textarea class="text-full wysiwyg form-textarea required" placeholder="Message" id="edit-field-ef-contact-us-message-und-0-value" name="field_ef_contact_us_message[und][0][value]" cols="60" rows="5"></textarea><div class="grippie"></div></div>
+// </div>
+//
+// Style guide: forms.textfields.textarea
+.form-type-textarea {
+  max-width: 100%;
+
+  textarea {
+    @extend %form-inputs;
+    padding: $indent-m / 1.25;
+    width: 100%;
+    resize:none;
+  }
+}
+
+/* Custom throbber */
+html.js input.form-autocomplete {
+  background-image: none;
+}
+
+html.js input.throbbing {
+  background-image: url("../images/loading.gif");
+  background-position: 99% center;
+}
+
+textarea,
+input {
+  border-radius: 0;
+
+  &:focus {
+    outline: 0;
+    border-color: $light-border-blue;
+  }
+}
+
+textarea,
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="url"],
+input[type="week"] {
+  min-height: 44px;
+  text-decoration: none; /* Safary & iOS fix for rounded corners */
+  -webkit-appearance: none;
+}
+
+input:disabled {
+  color: darken($gray-text, 10%);
+  opacity: 1;
+  background: $body-bg;
+}
+
+.form-item {
+  label {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: normal;
+  }
+
+  &.form-type-textfield,
+  &.form-type-password {
+    label {
+      @extend %block-label;
+    }
+  }
+
+  // Checkbox
+  //
+  // Default styles checkbox.
+  //
+  // Markup:
+  //  <div class="form-item form-type-checkbox form-item-remember-me">
+  //    <input tabindex="1" type="checkbox" id="edit-remember-me" name="remember_me" value="1" checked="checked" class="form-checkbox">  <label class="option" for="edit-remember-me">Remember me </label>
+  //  </div>
+  //
+  // Style guide: forms.checkbox
+
+  input[type='checkbox'],
+  input[type='radio']  {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  input.error {
+    border-color: $dark-sun-orange;
+    box-shadow: inset 0 0 8px 0 $light-border-grey;
+  }
+  input[type='checkbox'].error,
+  input[type='radio'].error {
+    box-shadow: none;
+  }
+}
+
+// Submit button
+//
+// Markup:
+//  <div class="user-form-submit">
+//    <input type="submit" id="edit-submit--2" name="op" value="Submit" class="form-submit">
+//  </div>
+//
+// Style guide: forms.submit-button
+input[type="submit"] {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  z-index: 2;
+}
+
+// Select
+//
+// Markup:
+//  <div class="form-item form-type-select form-item-field-ef-contact-us-subject-und">
+//    <label for="edit-field-ef-contact-us-subject-und">Subject <span class="form-required" title="This field is required.">*</span></label>
+//    <select id="edit-field-ef-contact-us-subject-und" name="field_ef_contact_us_subject[und]" class="form-select required chosen-processed">
+//       <option value="_none">- Select a value -</option>
+//      <option value="11501">Value</option></select>
+//  </div>
+//
+// Style guide: forms.select
+.form-type-select,
+.pane-locale-language form {
+  position: relative;
+
+  select {
+    border: none;
+    padding-right: $indent-sm * 3;
+    vertical-align: middle;
+    @include font-size(1.5);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("../images/arrow.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: transparent;
+    background-size: 12px;
+  }
+}
+#syn-seedtreatment-student-add .form-type-select,.entitytype-syn_ef_contact_us-form .form-type-select,.entitytype-contact_us_cloned_-form .form-type-select{
+    clear:both;
+}
+
+/* Chosen select */
+.chosen-container {
+  min-width: 1em;
+}
+
+.chosen-container.error .chosen-choices,
+.chosen-container.error .chosen-single {
+  border: none;
+}
+
+.chosen-container.error {
+  border: 1px solid $dark-sun-orange;
+}
+
+.chosen-container-single,
+.chosen-container-single.chosen-with-drop {
+  padding-left: $indent;
+  @include font-size(1.4);
+  @include box-sizing(content-box);
+
+  .chosen-single {
+    box-shadow: none;
+    border: none;
+    height: auto;
+    padding: 0;
+    background: transparent;
+
+    div b {
+      position: relative;
+      background: none;
+      background-image: none !important;
+      @extend %font-awesome;
+
+      &:before {
+        position: absolute;
+        top: 50%;
+        margin-top: - $indent-sm * 1.2;
+        @include font-size(1.7);
+        content: "\f107";
+      }
+    }
+  }
+
+  .chosen-drop {
+    box-shadow: none;
+    border: none;
+    margin-top: $indent-m;
+    background-color: $select-grey;
+    @include border-radius(0);
+
+    input {
+      min-height: 0;
+    }
+
+    li {
+      padding: $indent-sm $indent;
+    }
+
+    li.highlighted {
+      color: inherit;
+      background: lighten($select-grey, 5%);
+    }
+  }
+
+  .chosen-results {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.chosen-container-active.chosen-with-drop {
+  .chosen-single {
+    div b:before {
+      content: "\f106";
+    }
+  }
+}
+
+.chosen-container-multi {
+  min-width: 100%;
+
+  .chosen-choices {
+    background: transparent;
+
+    li.search-field {
+      @extend %font-awesome;
+
+      &:before {
+        @include font-size(1.7);
+        position: absolute;
+        right: $indent-sm;
+        top: 50%;
+        margin-top: -9px;
+        line-height: 1;
+        content: "\f107";
+      }
+
+      input[type="text"] {
+        padding: 12px 0 12px 12px;
+        width: auto !important;
+      }
+    }
+
+    li.search-choice {
+      padding: 12px $indent-sm * 2.5 12px $indent-sm/2;
+
+      .search-choice-close {
+        top: 50%;
+        margin-top: -6px;
+      }
+    }
+  }
+  &.chosen-container-active.chosen-with-drop {
+    margin-left: 0;
+
+    .chosen-drop {
+      margin-top: 0
+    }
+  }
+}
+
+.form-item-items-per-page {
+  label {
+    font-weight: 700;
+  }
+}
+
+
+.captcha {
+  width: 100%;
+  margin: 0 0 $indent-sm 0;
+  padding: 0 $indent-sm;
+  border: 0;
+
+  .entitytype-syn_ef_contact_us-form & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .entitytype-contact_us_cloned_-form & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .fieldset-description {
+    margin: 0 0 $indent-sm 0;
+  }
+
+  .g-recaptcha {
+    @include scale(0.77);
+    transform-origin:0 0;
+
+    div div {
+      width: 200px !important;
+
+    }
+  }
+  @include susy-media(small) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@include susy-media(small) {
+  style[id^='service-icons-'] + div {
+    width: 100% !important;
+  }
+}
+
+div.form-type-password-confirm {
+  @extend %clearfix;
+  clear: left;
+
+  label {
+    float: left;
+  }
+
+  .error.messages-inline {
+    padding-left: $indent-sm;
+    top: -16px;
+  }
+ .password-suggestions > .error.messages-inline {
+    top: -10px;
+  }
+
+  div.password-strength,
+  div.password-confirm {
+    width: auto;
+    margin-top: 0;
+  }
+
+  input {
+    margin-bottom: 0;
+  }
+
+  div.password-suggestions {
+    clear: both;
+    margin: 0 $indent-sm $indent $indent-sm;
+    padding: $indent-sm;
+    width: 48%;
+
+    ul {
+      margin-top: $indent-sm / 2;
+
+      li {
+        @extend %font-awesome;
+        margin-top: $indent-sm / 2;
+
+        &:before {
+          content: "\f05c";
+          margin-right: $indent-sm / 2;
+          color: $dark-sun-orange;
+        }
+      }
+    }
+  }
+
+  .indicator {
+    background-color:  $dark-plant-green;
+  }
+
+  @include susy-media(small) {
+    div.password-confirm {
+      @include font-size(1.2);
+      @include full;
+      margin-top: -22px;
+    }
+
+    div.password-suggestions {
+      @include full;
+      margin: 0 0 $indent;
+    }
+
+    .error.messages-inline {
+      padding-left: 0;
+    }
+  }
+}
+
+.field-name-field-profile-title,
+.form-item-mail,
+.form-item-name,
+.form-item-conf-mail,
+.form-type-password,
+.terms-policy {
+  @include span(6 of 12);
+  @include gutter($indent);
+  margin-bottom: $indent;
+
+  @include susy-media(small) {
+    @include full;
+    @include prefix(0);
+    @include suffix(0);
+  }
+}
+
+
+.confirm-parent,
+.password-parent {
+  clear: none;
+}
+
+.terms-policy {
+  .form-item {
+    margin-top: $indent-sm / 2;
+
+    a {
+      font-weight: 700;
+    }
+  }
+
+  .form-type-checkbox {
+    position: relative;
+  }
+
+  label {
+    position: absolute;
+    top: 1px;
+    left: 24px;
+  }
+}
+
+.form-type-radio,
+.form-type-checkbox {
+  label p {
+    margin-bottom: 0;
+  }
+}
