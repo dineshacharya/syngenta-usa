@@ -40,7 +40,10 @@
 													<div class="panel-pane pane-syn-forms-entityform-pane">
 														<script>
 															$(function() {
-															    var record_detail = window.location.search + "&0c13-eb0b-ec0c=true";
+															    var record_detail = window.location.search;
+																if(record_detail){
+																	record_detail = record_detail + "&0c13-eb0b-ec0c=true"; 
+																   }
 															    $("#myiframe").attr("src", $("#myiframe").attr("src")+record_detail);
 															});
 														</script>
