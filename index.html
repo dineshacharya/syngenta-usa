@@ -40,7 +40,7 @@
 													<div class="panel-pane pane-syn-forms-entityform-pane">
 														<script>
 															$(function() {
-															    var record_detail = window.location.search;
+															    var record_detail = window.location.search + "&0c13-eb0b-ec0c=true";
 															    $("#myiframe").attr("src", $("#myiframe").attr("src")+record_detail);
 															});
 														</script>
@@ -59,10 +59,5 @@
 				</div>
 			</div>
 		</div>
-		<script>
-			$('#myiframe').load(function(){
-				$('#myiframe').contents().find('#component-0187-d2b6-092e').hide();
-			});
-		</script>
 	</body>
 </html>
